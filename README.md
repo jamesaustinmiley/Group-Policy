@@ -1,1 +1,1 @@
-# Group-Policy
+# Group Policy and Managing Accounts
