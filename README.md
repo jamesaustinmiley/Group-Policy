@@ -21,27 +21,48 @@ This tutorial outlines the modification of the client-1 VM so that non-administr
 <h2>  Steps </h2>
 
 <p>
-
+Log in to the client-1 VM as mydomain.com\jane_admin.
 </p>
 <p>
-<img src="https://imgur.com/ztlp3uP.png" alt="ADUC Employees"/>
+<img src="https://imgur.com/tz17RAb.png" alt="client-1"/>
 </p>
 <p>
-<img src="https://imgur.com/KZHWqTm.png" alt="Run"/>
+Go to Settings, via the Start Menu, and click System. Scroll down and click About. 
 </p>
 <p>
-<img src="https://imgur.com/IhbNaFH.png" alt="GPMC Console"/>
+<img src="https://imgur.com/lkZTIiv.png" alt="System"/>
+</p>
+<p>
+Click Remote Desktop and then Remote Desktop Users. 
+</p>
+<p>
+<img src="https://imgur.com/D3Uc27a.png" alt="Remote Desktop Users"/>
+</p>
+<p>
+Click Select Users that can Remotely Access this PC and click Add.
+</p>
+<p>
+<img src="https://imgur.com/kwW6JJA.png" alt="Select Users"/>
+</p>
+<p>
+Enter Domain Users and click OK twice to allow any non-administrative users who are domain members to log into client-1.
+</p>
+<p>
+<img src="https://imgur.com/fm5mWhC.png" alt="Domain Users"/>
+</p>
+<p>
+<img src="https://imgur.com/uje25l9.png" alt="Remote Desktop Users"/>
 </p>
 <br />
 
 <p>
-Right-click Default Domain Policy and select Edit to modify it. Navigate to the Account Lockout Policy Settings. The three primary settings are Account Lockout Duration, Threshold, and the Reset counter. Account Lockout Duration is the time in minutes that an account remains locked before it is automatically unlocked. Account Lockout Threshold is the number of failed logon attempts that will trigger an account lockout. The Reset Account Lockout Counter is the time in minutes after which the failed logon attempts counter is reset to 0, assuming there are no additional failed logon attempts. After adjusting the three settings, go back to the Default Domain Policy to observe the new Account Lockout Policy along with the other Settings. To force an update of the Group Policy instead of waiting for it to do so automatically, you must log in to the client-1 vm, open Command Prompt as an Administrator, and type gpupdate /force.
+Log in to the dc-1 VM as jane_admin.
 </p>
 <p>
-<img src="https://imgur.com/YM0PjgU.png" alt="Default Domain Policy"/>
+<img src="https://imgur.com/O9H3Soc.png" alt="dc-1"/>
 </p>
 <p>
-<img src="https://imgur.com/ljPWt10.png" alt="Account Lockout Policy"/>
+
 </p>
 <p>
 <img src="https://imgur.com/zveVBKU.png" alt="New Account Lockout Policy"/>
