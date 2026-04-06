@@ -3,7 +3,7 @@
 </p>
 
 <h1>Managing Active Directory Accounts through Group Policy</h1>
-This tutorial outlines configuring Group Policy to manage Active Directory user accounts, specifically account lockout policies. Configuring an account lockout policy in Active Directory using Group Policy involves defining settings that control when an account is locked after multiple failed login attempts, how long the account remains locked, and how the lockout counter is reset. Active Directory is Microsoft software designed to manage user accounts and their associated properties, such as passwords and permissions, at scale. <br />
+This tutorial outlines the modification of the client-1 VM so that non-administrative users can log in, the creation of these users, and the configuration of Group Policy so it can manage the Active Directory accounts of these users, specifically the account lockout policies. Active Directory is Microsoft software designed to manage user accounts and their associated properties, such as passwords and permissions, at scale. Group Policy is a feature within AD that is used for configruration. <br />
 
 
 <h2>Environments and Technologies Used</h2>
