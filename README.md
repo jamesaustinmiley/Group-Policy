@@ -10,8 +10,8 @@ This tutorial outlines the modification of the client-1 VM so that non-administr
 
 - Microsoft Azure 
 - Remote Desktop
-- Active Directory Domain Services
-- PowerShell
+- Windows PowerShell ISE
+- Active Directory Users and Computers
 
 <h2>Operating Systems Used </h2>
 
@@ -62,18 +62,45 @@ Log in to the dc-1 VM as jane_admin.
 <img src="https://imgur.com/O9H3Soc.png" alt="dc-1"/>
 </p>
 <p>
-
+Type PowerShell in the Windows Start Menu search bar. Right-click Windows PowerShell ISE and choose Run as Administrator. 
 </p>
 <p>
-<img src="https://imgur.com/zveVBKU.png" alt="New Account Lockout Policy"/>
+<img src="https://imgur.com/WeG0wOs.png" alt="Windows PowerShell ISE"/>
 </p>
 <p>
-<img src="https://imgur.com/p7bkZrA.png" alt="Command Prompt"/>
+Click on the Script down arrow to unveil a text box. Create a new Desktop File in the text box called create-users. Copy a script with code and paste it in the create-users file.  
+</p>
+<p>
+<img src="https://imgur.com/O9SmvVw.png" alt="create-users"/>
+</p>
+<p>
+<img src="https://imgur.com/pB6hx61.png" alt="Code"/>
+</p>
+<p>
+<img src="https://imgur.com/ZEdy7Op.png" alt="text box"/>
+</p>
+<p>
+Click the Run Script button (the yellow arrow) to start creating new users to join Active Directory. Open Active Directory Users and Computers to see the new user accounts in the _EMPLOYEES folder. 
+</p>
+<p>
+<img src="https://imgur.com/zMT6hpp.png" alt="Run Script"/>
+</p>
+<p>
+<img src="https://imgur.com/KiV7Vlv.png" alt="New Users"/>
+</p>
+<p>
+Log in to the client-1 VM with one of the new user accounts (mydomain.com\badaca.ros). You will see the password for each of the new users is included in the script (Password1). 
+</p>
+<p>
+<img src="https://imgur.com/DidS6Xw.png" alt="Password1"/>
+</p>
+<p>
+<img src="https://imgur.com/MhDKdH6.png" alt="badaca.ros"/>
 </p>
 <br />
 
 <p>
-You can enable or disable user accounts in Active Directory Users and Computers. A quick way to find the account is to right-click mydomain.com, click Find, and type the name of the account. Double-click the account, then select Account to check whether it is locked or unlocked. Using Event Viewer (eventvwr.msc in the Start menu), you can view various logs, including a Security log that shows, among other things, both successful and unsuccessful account login activity. To find activity for a specific account, you can right-click Security, click Find, and type the name. This log can be viewed on both dc-1 and client-1. Although you must run eventvwr.msc as an Administrator and enter the mydomain.com\jane_admin credentials to view it in client-1.
+
 </p>
 <p>
 <img src="https://imgur.com/A2wgisn.png" alt="Find Users"/>
