@@ -18,10 +18,10 @@ This tutorial outlines the modification of the client-1 VM so that non-administr
 - Windows Server 2022
 - Windows 11 (25H2)
 
-<h2> Configuration Steps</h2>
+<h2>  Steps </h2>
 
 <p>
-Log in to the DC-1 Virtual Machine, open Active Directory Users and Computers, and the _EMPLOYEES organizational unit. Pick an employee (mydomain.com\fox.civ) and purposefully use a password other than the correct one (Password1) to observe that there is no policy in place to lock an account after numerous attempts at logging in to the client-1 vm. Back in dc-1, right-click Start, click Run, and type gpmc.msc to open the Group Policy Management Console. The Group Policy Management Console (GPMC) is a Microsoft tool for creating, editing, managing, and troubleshooting Group Policy in Active Directory (AD) environments. Think of it as the control center for rules and settings that get pushed to users and computers across a domain.
+
 </p>
 <p>
 <img src="https://imgur.com/ztlp3uP.png" alt="ADUC Employees"/>
