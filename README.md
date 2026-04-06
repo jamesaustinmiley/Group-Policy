@@ -12,6 +12,8 @@ This tutorial outlines the modification of the client-1 VM so that non-administr
 - Remote Desktop
 - Windows PowerShell ISE
 - Active Directory Users and Computers
+- Group Policy Management Console
+- Command Prompt
 
 <h2>Operating Systems Used </h2>
 
@@ -89,7 +91,7 @@ Click the Run Script button (the yellow arrow) to start creating new users to jo
 <img src="https://imgur.com/KiV7Vlv.png" alt="New Users"/>
 </p>
 <p>
-Log in to the client-1 VM with one of the new user accounts (mydomain.com\badaca.ros). You will see the password for each of the new users is included in the script (Password1). 
+Log in to the client-1 VM with one of the new user accounts (mydomain.com\badaca.ros) to verify the accounts are working. You will see the password for each of the new users is included in the script (Password1). Log out once you are finished. 
 </p>
 <p>
 <img src="https://imgur.com/DidS6Xw.png" alt="Password1"/>
@@ -100,36 +102,71 @@ Log in to the client-1 VM with one of the new user accounts (mydomain.com\badaca
 <br />
 
 <p>
+In dc-1, open the Group Policy Management Console (gpmc.msc), via the Start Menu. GPMC is the control center for rules and settings that get assigned to users and computers across a domain. 
+</p>
+<p>
+<img src="https://imgur.com/w8Hhlin.png" alt="GPMC"/>
+</p>
+<p>
+Right-click Default Domain Policy and click Edit to open the Group Policy Management Editor. 
+</p>
+<p>
+<img src="https://imgur.com/GRAiBXh.png" alt="Group Policy Management Editor"/>
+</p>
+<p>
+Expand Computer Configuration and navigate to the Account Lockout Policy. Click on it to view the primary settings. Click each setting to configure them. 
+</p>
+<p>
+<img src="https://imgur.com/4BDMkV3.png" alt="Account Lockout Policy"/>
+</p>
+<p>
+<img src="https://imgur.com/z4XvRH4.png" alt="ALP Settings"/>
+</p>
+<p>
+Set the Account Lockout Duration to 30 minutes. This is the time that an account remains locked before it is automatically unlocked. 
+</p>
+<p>
+<img src="https://imgur.com/8awVbi5.png" alt="Duration"/>
+</p>
+<p>
+Set the Account Lockout Threshold to 5 invalid logon attempts. This is the number of failed logon attempts that will trigger an account lockout.
+</p>
+<p>
+<img src="https://imgur.com/FkaruHZ.png" alt="Threshold"/>
+</p>
+<p>
+Set the Reset Account Lockout After setting to 10 minutes. This is the  time in minutes after which the failed logon attempts counter is reset to 0, assuming there are no additional failed logon attempts.
+</p>
+<p>
+<img src="https://imgur.com/CXNMKgN.png" alt="Reset"/>
+</p>
+<p>
+<img src="https://imgur.com/32ByPW0.png" alt="ALP Settings 2"/>
+</p>
+<p>
+Log back in to the client-1 VM as jane_admin. 
+</p>
+<p>
+<img src="https://imgur.com/Yxy8bRP.png" alt="Client-1"/>
+</p>
+<p>
+Open Command Prompt, via the Start Menu search bar, and type gpupdate /force to force the update of the account lockout policy for all user accounts. Close Command Prompt when this is done.  
+</p>
+<p>
+<img src="https://imgur.com/c1CPvKD.png" alt="gpupdate"/>
+</p>
+<p>
+Open Command Prompt again and Run as Administrator. Type gpresult /r to see that Default Domain Policy is listed as an Applied Group Policy Object. This means that the account lockout policy was sucessfully applied. 
+</p>
+<p>
+<img src="https://imgur.com/34qZErT.png" alt="Command Prompt Admin"/>
+</p>
+<p>
+<img src="https://imgur.com/ueVvXbs.png" alt="gpresult"/>
+</p>
+<p>
+<img src="https://imgur.com/gLtD306.png" alt="AGPO"/>
+</p>
+<br />
 
-</p>
 <p>
-<img src="https://imgur.com/A2wgisn.png" alt="Find Users"/>
-</p>
-<p>
-<img src="https://imgur.com/BC2jjRg.png" alt="Unlock or Lock"/>
-</p>
-<p>
-<img src="https://imgur.com/yH8Oyk0.png" alt="eventvwr.msc"/>
-</p>
-<p>
-<img src="https://imgur.com/DG6tQ61.png" alt="Event Viewer"/>
-</p>
-<p>
-<img src="https://imgur.com/Blslm1j.png" alt="Security"/>
-</p>
-<p>
-<img src="https://imgur.com/NAYm6lD.png" alt="Find User"/>
-</p>
-<p>
-<img src="https://imgur.com/YYGAh90.png" alt="fox.civ"/>
-</p>
-<p>
-<img src="https://imgur.com/B5ku64I.png" alt="Administrator"/>
-</p>
-<p>
-<img src="https://imgur.com/Zlqgeo7.png" alt="Jane"/>
-</p>
-<p>
-<img src="https://imgur.com/GJGyvK2.png" alt="Client-1"/>
-</p>
-
