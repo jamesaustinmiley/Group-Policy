@@ -156,7 +156,7 @@ Open Command Prompt, via the Start Menu search bar, and type gpupdate /force to 
 <img src="https://imgur.com/c1CPvKD.png" alt="gpupdate"/>
 </p>
 <p>
-Open Command Prompt again and Run as Administrator. Type gpresult /r to see that Default Domain Policy is listed as an Applied Group Policy Object. This means that the account lockout policy was sucessfully applied. 
+Open Command Prompt again and Run as Administrator. Type gpresult /r to see that Default Domain Policy is listed as an Applied Group Policy Object. This means that the Account Lockout Policy was sucessfully applied. 
 </p>
 <p>
 <img src="https://imgur.com/34qZErT.png" alt="Command Prompt Admin"/>
@@ -167,6 +167,21 @@ Open Command Prompt again and Run as Administrator. Type gpresult /r to see that
 <p>
 <img src="https://imgur.com/gLtD306.png" alt="AGPO"/>
 </p>
-<br />
-
 <p>
+A way to test the Account Lockout Policy is to attempt to log into one of the user accounts (badaca.ros) five times with the wrong password. When you attempt to log in for a sixth time you should recieve a notice that the account has been locked. 
+</p>
+<p>
+<img src="https://imgur.com/YLeluPI.png" alt="Lockout"/>
+</p>
+<p>
+Double-click the user account name and click on the Account tab to be able to unlock the account by checking the box, clicking Apply, and clicking OK. 
+</p>
+<p>
+<img src="https://imgur.com/aeOGKiw.png" alt="Unlock"/>
+</p>
+<p>
+A quick way to find an account in Active Directory Users and Computers is to right-click mydomain.com, click Find, and enter the account name.
+</p>
+<p>
+<img src="https://imgur.com/kXfhXXM.png" alt="Find"/>
+</p>
