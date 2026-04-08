@@ -211,6 +211,3 @@ To enable the user account in ADUC, right-click the account name and click Enabl
 <p>
 <img src="https://imgur.com/FAScbHG.png" alt="Enable Account"/>
 </p>
-<br />
-
-<p>
