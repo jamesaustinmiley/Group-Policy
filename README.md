@@ -114,10 +114,13 @@ Right-click Default Domain Policy and click Edit to open the Group Policy Manage
 <img src="https://imgur.com/GRAiBXh.png" alt="Group Policy Management Editor"/>
 </p>
 <p>
-Expand Computer Configuration and navigate to the Account Lockout Policy. Click on it to view the primary settings. Click each setting to configure them. 
+Expand Computer Configuration and navigate to the Account Lockout Policy. 
 </p>
 <p>
 <img src="https://imgur.com/4BDMkV3.png" alt="Account Lockout Policy"/>
+</p>
+<p>
+Click on Account Lockout Policy to view the primary settings. Click each setting to configure them. 
 </p>
 <p>
 <img src="https://imgur.com/z4XvRH4.png" alt="ALP Settings"/>
