@@ -185,3 +185,32 @@ A quick way to find an account in Active Directory Users and Computers is to rig
 <p>
 <img src="https://imgur.com/kXfhXXM.png" alt="Find"/>
 </p>
+<br />
+
+<p>
+To reset the password of a user account in ADUC, right-click the account name, click Reset Password, and enter the new password. 
+</p>
+<p>
+<img src="https://imgur.com/BDUq39l.png" alt="Reset Password"/>
+</p>
+<p>
+<img src="https://imgur.com/DgyGE3n.png" alt="New Password"/>
+</p>
+<p>
+To disable a user account in ADUC, right-click the account name and click Disable Account. When you attempt to log in to the account you will recieve a message stating that the account is disabled. 
+</p>
+<p>
+<img src="https://imgur.com/ahQXm9Y.png" alt="Disable Account"/>
+</p>
+<p>
+<img src="https://imgur.com/yg5DFaE.png" alt="Account Disabled"/>
+</p>
+<p>
+To enable the user account in ADUC, right-click the account name and click Enable Account. 
+</p>
+<p>
+<img src="https://imgur.com/FAScbHG.png" alt="Enable Account"/>
+</p>
+<br />
+
+<p>
