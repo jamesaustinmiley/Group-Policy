@@ -3,7 +3,7 @@
 </p>
 
 <h1>Creating Users and Managing Active Directory Accounts</h1>
-This tutorial outlines the modification of the client-1 VM so that non-administrative users can log in, the creation of these users, and the configuration of Group Policy so it can manage the Active Directory accounts of these users, specifically the account lockout policies. Active Directory is Microsoft software designed to manage user accounts and their associated properties, such as passwords and permissions, at scale. Group Policy is a feature within AD that is used for configruration. <br />
+This tutorial outlines the modification of the client-1 VM so that non-administrative users can log in, the creation of these users, the configuration of Group Policy so it can manage the Active Directory accounts of these users, specifically the account lockout policies, and setting permissions for folders within Active Directory. Active Directory is Microsoft software designed to manage user accounts and their associated properties, such as passwords and permissions, at scale. Group Policy is a feature within AD that is used for configruration. <br />
 
 
 <h2>Environments and Technologies Used</h2>
@@ -214,3 +214,101 @@ To enable the user account in ADUC, right-click the account name and click Enabl
 <p>
 <img src="https://imgur.com/FAScbHG.png" alt="Enable Account"/>
 </p>
+<br />
+
+<p>
+Log in to the dc-1 VM as your domain admin account (mydomain.com\jane_admin).
+</p>
+<p>
+<img src="https://imgur.com/iVYJU6m.png" alt="domain admin"/>
+</p>
+<p>
+Open Active Directory Users and Computers and select a user account in the EMPLOYEES folder (badaca.ros).
+</p>
+<p>
+<img src="https://imgur.com/4kksRGa.png" alt="badaca.ros"/>
+</p>
+<p>
+Log in to the client-1 VM with the user account you selected (badaca.ros).
+</p>
+<p>
+<img src="https://imgur.com/CLE52bF.png" alt="client-1"/>
+</p>
+<p>
+Back in the dc-1 VM, open File Explorer and navigate to the Windows C Drive. 
+</p>
+<p>
+<img src="https://imgur.com/090kzcl.png" alt="C Drive"/>
+</p>
+<p>
+Create four new folders within Windows C Drive by right-clicking beneath the C Drive contents, clicking New, and then Folder. 
+</p>
+<p>
+<img src="https://imgur.com/Z8IbZPC.png" alt="New Folder"/>
+</p>
+<p>
+The four new folders will be called read-access, write-access, no-access, and accounting. 
+</p>
+<p>
+<img src="https://imgur.com/lm4CbVD.png" alt="New Folders"/>
+</p>
+<p>
+Set permissions to the read-access, write-access, and no-access folders by right-clicking the folder and selecting Properties. 
+</p>
+<p>
+<img src="https://imgur.com/5bmwX4C.png" alt="Properties"/>
+</p>
+<p>
+Navigate to the Sharing tab and click Share. 
+</p>
+<p>
+<img src="https://imgur.com/Z6AStGr.png" alt="Share"/>
+</p>
+<p>
+For the read-access folder, Domain Users will be allowed to read the contents of the folder. 
+</p>
+<p>
+<img src="https://imgur.com/1lMLRzg.png" alt="Read"/>
+</p>
+<p>
+For the write-access folder, Domain Users will be allowed to read the contents of the folder and make additions to the folder (write). 
+</p>
+<p>
+<img src="https://imgur.com/RqEckli.png" alt="write-access properties"/>
+</p>
+<p>
+<img src="https://imgur.com/pba5eae.png" alt="Users Read and Write"/>
+</p>
+<p>
+For the no-access folder, Domain Admins will be allowed to read the contents of the folder and make additions to the folder (write). 
+</p>
+<p>
+<img src="https://imgur.com/A1NKTcS.png" alt="no-access properties"/>
+</p>
+<p>
+<img src="https://imgur.com/dMa3rcP.png" alt="Admins Read and Write"/>
+</p>
+<p>
+In the client-1 VM, open File Explorer and type \\dc-1 in the Search bar to view the read-access, write-access, and no-access folders. 
+</p>
+<p>
+<img src="https://imgur.com/TImXP0x.png" alt="\\dc-1"/>
+</p>
+<p>
+<img src="https://imgur.com/jFHjICJ.png" alt="dc-1"/>
+</p>
+<p>
+Since badaca.ros is a Domain User, you can view the contents of the read-access and write-access folders. However, since badaca.ros isn't a Domain Admin, you won't be able to view the contents of the no-access folder. 
+</p>
+<p>
+<img src="https://imgur.com/Oud3Don.png" alt="read-access"/>
+</p>
+<p>
+<img src="https://imgur.com/fEp8jjh.png" alt="write-access"/>
+</p>
+<p>
+<img src="https://imgur.com/K2O6L65.png" alt="no-access"/>
+</p>
+<br />
+
+<p>
