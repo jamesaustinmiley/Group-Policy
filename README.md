@@ -2,7 +2,7 @@
 <img src="https://i.imgur.com/pU5A58S.png" alt="Microsoft Active Directory Logo"/>
 </p>
 
-<h1>User Creation, AD Account Management, and </h1>
+<h1>User Creation, AD Account Management, and File Share Permissions</h1>
 This tutorial outlines the modification of the client-1 VM so that non-administrative users can log in, the creation of these users, the configuration of Group Policy so it can manage the Active Directory accounts of these users, specifically the account lockout policies, and setting permissions for folders within Active Directory. Active Directory is Microsoft software designed to manage user accounts and their associated properties, such as passwords and permissions, at scale. Group Policy is a feature within AD that is used for configruration. <br />
 
 
