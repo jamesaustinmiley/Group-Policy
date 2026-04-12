@@ -312,3 +312,61 @@ Since badaca.ros is a Domain User, you can view the contents of the read-access 
 <br />
 
 <p>
+Open Active Directory Users and Computers. Right-click mydomain.com. Click New. Click Organizational Unit. The new OU will be called _GROUPS. Right-click mydomain.com and click Refresh. 
+</p>
+<p>
+<img src="https://imgur.com/o2TvfN5.png" alt="New OU"/>
+</p>
+<p>
+<img src="https://imgur.com/79iU6Ei.png" alt="GROUPS"/>
+</p>
+<p>
+Open the _GROUPS folder. Right-click in the contents window. Click New. Click Group. The new group will be named ACCOUNTANTS. The Group Scope is Global and the Group Type is Security. 
+</p>
+<p>
+<img src="https://imgur.com/AgpVZhW.png" alt="New Group"/>
+</p>
+<p>
+<img src="https://imgur.com/wzZpwcb.png" alt="ACCOUNTANTS"/>
+</p>
+<p>
+Go back to the accounting folder in the Windows C Drive. Right-click accounting and click Properties. Navigate to the Sharing tab and click Share. 
+</p>
+<p>
+<img src="https://imgur.com/WrTZSkt.png" alt="accounting properties"/>
+</p>
+<p>
+<img src="https://imgur.com/6urHLGA.png alt="accounting share"/>
+</p>
+<p>
+For the accounting folder, the ACCOUNTANTS group will be allowed to read the contents of the folder and make additions (write). 
+</p>
+<img src="https://imgur.com/uNSauSn.png" alt="ACCOUNTANTS Read Write"/>
+</p>
+<p>
+On the client-1 VM, as badaca.ros, try to access the accountants folder through File Explorer. It will fail because badaca.ros isn't allowed to view the contents. 
+</p>
+<p>
+<img src="https://imgur.com/qU2BfTX.png" alt="accounting dc-1"/>
+</p>
+<p>
+<img src="https://imgur.com/p6Qb5lA.png" alt="no permission"/>
+</p>
+<p>
+Add the badaca.ros account to the ACCOUNTANTS group. Click on ACCOUNTANTS. Navigate to the Members tab. Click Add. Enter badaca.ros as the object to be added. Click OK, Apply, and OK again. 
+</p>
+<p>
+<img src="https://imgur.com/Lr7cuoS.png" alt="Members"/>
+</p>
+<p>
+<img src="https://imgur.com/KfZ4rgH.png" alt="badaca.ros"/>
+</p>
+<p>
+<img src="https://imgur.com/YYUmrkV.png" alt="new member"/>
+</p>
+<p>
+Log back into the client-1 VM as badaca.ros and open the accounting folder to view its contents. 
+</p>
+<p>
+<img src="https://imgur.com/yXV5swZ.png" alt="accounting contents"/>
+</p>
